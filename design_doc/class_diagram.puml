@@ -1,0 +1,22 @@
+@startuml object_detection
+
+object MakeDatapathList{
+    arg
+    rootpath : string
+    ---
+    returns
+    train_img_list
+    train_anno_list
+    val_img_list
+    val_anno_list
+}
+
+class Anno_xml2list{
+    +Init()
+    +XMLtoList(xml_path, width, height) : anno_data_list
+}
+
+class DataTransform{
+    +Init(int64_t input_size, color_mean)
+}
+@enduml
